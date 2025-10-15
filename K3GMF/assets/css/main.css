@@ -1838,6 +1838,43 @@ section,
   color: var(--accent-color);
 }
 
+/* ===== Styling khusus halaman Landasan Hukum ===== */
+.hukum-section {
+  padding: 40px 0 !important;
+}
+
+.hukum-section .section-title {
+  margin-bottom: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.hukum-section .section-title h2 {
+  color: #727070;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration-color: #dc3545; /* Warna garis bawah (merah/tema utama) */
+  text-decoration-thickness: 1px; /* Ketebalan garis bawah */
+  text-underline-offset: 6px; /* Jarak antara teks dan garis bawah */
+}
+
+.hukum-section p {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.hukum-section .section-title.mt-5 {
+  margin-top: 60px !important; 
+  font-size: 14px;
+}
+
+.hukum-section ul li {
+  margin-bottom: 5px !important;
+  font-size: 14px;
+  line-height: 1.6;
+} 
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
