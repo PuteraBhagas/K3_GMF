@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ff4a17; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #0080f7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,7 +30,7 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #e5eaee;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ff4a17; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #0080f7; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -1838,9 +1838,131 @@ section,
   color: var(--accent-color);
 }
 
+/* ===== Styling khusus halaman Penerapan k3 ===== */
+.k3-section {
+  padding: 40px 0 !important;
+}
+
+.k3-section .section-title {
+  margin-bottom: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.k3-section .section-title h2 {
+  color: #727070;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration-color: #dc3545; /* Warna garis bawah (merah/tema utama) */
+  text-decoration-thickness: 1px; /* Ketebalan garis bawah */
+  text-underline-offset: 6px; /* Jarak antara teks dan garis bawah */
+}
+
+.k3-section p {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.k3-section .section-title.mt-5 {
+  margin-top: 60px !important; 
+  font-size: 14px;
+}
+
+.k3-section ul li {
+  margin-bottom: 5px !important;
+  font-size: 14px;
+  line-height: 1.6;
+} 
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+.denah-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap; /* biar responsif di layar kecil */
+  margin-top: 20px;
+}
+
+/* Wrapper tiap gambar */
+.denah-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%; /* dua gambar sejajar */
+  max-width: 520px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Gambar */
+.denah-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* biar ga kepotong */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.denah-img:hover {
+  transform: scale(1.03);
+}
+
+/* Caption */
+.denah-caption {
+  font-size: 15px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Modal pop-up */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+}
+
+.image-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  color: #f1f1f1;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
 }
