@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SMK3 - GMF AeroAsia</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Struktur Organisasi SMK3 PT GMF AeroAsia Tbk.">
+  <meta name="keywords" content="SMK3, K3, GMF, AeroAsia, Safety Management">
+
+  <!-- Favicons -->
+  <link href="assets/img/garuda-maintenance-facility-aero-as--600.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Modal Image CSS -->
+  <style>
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .image-modal img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body class="service-details-page">
+
+  <!-- ======= Header (SAMA PERSIS SEPERTI lingkungan_kerja.html) ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">GMF Aeroasia</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Penerapan K3</a></li>
+          <li><a href="#team">Team</a></li>
+
+          <li class="dropdown">
+            <a href="#"><span>Menu</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="index.html">Profil Page</a></li>
+              <li><a href="#portfolio">Penerapan K3</a></li>
+              <li><a href="landasan-hukum.html">Landasan Hukum</a></li>
+              <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
+              <li><a href="keselamatan-kerja.html">Keselamatan Kerja</a></li>
+              <li><a href="alat-pelindung.html">Alat Pelindung Diri</a></li>
+              <li><a href="p3k.html">P3K</a></li>
+              <li><a href="smk3.html" class="active">SMK3</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="index.html#about">Get Started</a>
+    </div>
+  </header>
+  <!-- ======= End Header ======= -->
+
+  <main class="main">
+
+    <!-- ======= Page Title ======= -->
+    <div class="page-title dark-background" data-aos="fade"
+      style="background-image: url('assets/img/LandasanHukum/header.jpg'); background-size: cover;">
+      <div class="container position-relative text-center">
+        <h1>Struktur Organisasi SMK3</h1>
+        <p>Struktur organisasi Komite Keselamatan dan Kesehatan Kerja GMF AeroAsia</p>
+      </div>
+    </div>
+
+    <!-- ======= SMK3 Section ======= -->
+    <section id="smk3" class="service-details section">
+      <div class="container" data-aos="fade-up">
+
+        <!-- Pendahuluan -->
+        <div class="section-title">
+          <h2>Pendahuluan</h2>
+        </div>
+
+        <p>
+          Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3) di GMF AeroAsia disusun dengan struktur organisasi yang jelas
+          untuk memastikan seluruh proses berjalan aman dan sesuai standar keselamatan internasional.
+        </p>
+
+        <!-- ======= BAGAN STRUKTUR ORGANISASI ======= -->
+        <div class="section-title mt-5">
+          <h2>Bagan Struktur Organisasi SMK3</h2>
+        </div>
+
+        <div class="text-center">
+          <img src="assets/img/struktur-smk3.png"
+               alt="Struktur Organisasi SMK3 GMF AeroAsia"
+               class="img-fluid shadow rounded"
+               onclick="openSMK3Image(this)"
+               style="cursor:pointer; max-width: 900px;">
+          <p class="mt-2 text-muted">Gambar 1. Struktur Organisasi Komite K3 GMF AeroAsia</p>
+        </div>
+
+        <!-- MODAL POPUP -->
+        <div id="smk3Modal" class="image-modal" onclick="closeSMK3Image()">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="smk3ModalImg">
+          <div id="smk3Caption"></div>
+        </div>
+
+        <!-- TABEL STRUKTUR SMK3 -->
+        <div class="section-title mt-5">
+          <h2>Detail Struktur Organisasi SMK3</h2>
+        </div>
+
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered table-striped">
+            <thead class="table-primary">
+              <tr>
+                <th class="text-center">Level</th>
+                <th>Jabatan / Unit</th>
+                <th>Tanggung Jawab Utama</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="text-center"><strong>1</strong></td>
+                <td><strong>Direktur Utama (DT)</strong></td>
+                <td>Pemegang tanggung jawab tertinggi pelaksanaan K3.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>2</strong></td>
+                <td><strong>Safety Manager (VP QA & Safety)</strong></td>
+                <td>Mengawasi kebijakan dan program keselamatan.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>3</strong></td>
+                <td><strong>Quality Assurance & Safety GH (TQ)</strong></td>
+                <td>Menyusun SOP dan melaksanakan audit internal.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>4</strong></td>
+                <td><strong>Corporate Affairs & HSE GH (TU)</strong></td>
+                <td>Mengelola Kesehatan, Lingkungan, dan Tanggap Darurat.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>5</strong></td>
+                <td><strong>Unit Pendukung Implementasi K3</strong></td>
+                <td>Melaksanakan program implementasi K3 di seluruh divisi.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>6</strong></td>
+                <td><strong>Line Maintenance (TL), Base Maintenance (TB, TJ), Engine Serv (TV), Component Serv (TC)</strong></td>
+                <td>Mengawasi aktivitas K3 di area kerja masing-masing.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>7</strong></td>
+                <td><strong>Safety Officer</strong></td>
+                <td>Pengawasan keselamatan langsung dan pelaporan unsafe condition.</td>
+              </tr>
+
+              <tr>
+                <td class="text-center"><strong>8</strong></td>
+                <td><strong>Seluruh Pekerja GMF</strong></td>
+                <td>Pelaksana K3 di lapangan, mematuhi SOP & APD.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container text-center py-4">
+      <p>© 2025 <strong>GMF AeroAsia</strong>. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Modal JS -->
+  <script>
+    function openSMK3Image(img) {
+      const modal = document.getElementById("smk3Modal");
+      const modalImg = document.getElementById("smk3ModalImg");
+      const caption = document.getElementById("smk3Caption");
+
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      caption.innerHTML = img.alt;
+    }
+
+    function closeSMK3Image() {
+      document.getElementById("smk3Modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
