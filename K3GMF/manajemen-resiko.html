@@ -26,6 +26,35 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Inline styles khusus untuk halaman risiko -->
+  <style>
+    /* Risk matrix warna sederhana */
+    .risk-matrix { width:100%; border-collapse: collapse; text-align: center; }
+    .risk-matrix th, .risk-matrix td { border:1px solid #ddd; padding:8px; font-weight:600; }
+    .matrix-low { background:#d4edda; }       /* hijau */
+    .matrix-medium { background:#fff3cd; }    /* kuning */
+    .matrix-high { background:#f8d7da; }      /* merah muda */
+    .matrix-critical { background:#f5c6cb; }  /* merah */
+    .matrix-neutral { background:#f1f1f1; }
+
+    /* Risk register table */
+    .risk-register th { background:#f8f9fa; font-weight:700; }
+    .flowchart { width:100%; height:180px; }
+    .download-list a { display:block; margin-bottom:6px; }
+
+    /* Statistik cards */
+    .stat-card { border-radius:8px; padding:16px; color:#fff; }
+    .stat-1 { background:linear-gradient(90deg,#2b7cff,#66a6ff); }
+    .stat-2 { background:linear-gradient(90deg,#28c76f,#7ce3a2); }
+    .stat-3 { background:linear-gradient(90deg,#ff9f43,#ffc97a); }
+    .stat-4 { background:linear-gradient(90deg,#ff6b6b,#ff9f9f); }
+
+    /* Responsive tweaks */
+    @media (max-width:767px) {
+      .flowchart { height:260px; }
+    }
+  </style>
 </head>
 
 <body class="service-details-page">
@@ -35,8 +64,6 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">GMF Aeroasia</h1>
       </a>
 
@@ -57,7 +84,7 @@
               <li><a href="p3k.html">P3K</a></li>
               <li><a href="smk3.html" class="active">SMK3</a></li>
               <li><a href="manajemen-resiko.html">Manajemen Risiko</a></li>
-              <li><a href="audit-k3.html">Audit K3</a></li> <!-- tambahkan ini -->
+              <li><a href="audit-k3.html">Audit K3</a></li>
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -141,7 +168,7 @@
           </div>
         </div>
 
-        <!-- Identifikasi Bahaya -->
+        <!-- IDENTIFIKASI BAHAYA -->
         <div class="section-title mt-5">
           <h2>3. Identifikasi Bahaya (Hazard Identification)</h2>
         </div>
@@ -158,7 +185,7 @@
           </ul>
         </div>
 
-        <!-- Penilaian Risiko -->
+        <!-- PENILAIAN RISIKO -->
         <div class="section-title mt-5">
           <h2>4. Penilaian Risiko (Risk Assessment)</h2>
         </div>
@@ -173,23 +200,226 @@
               <li><strong>Keputusan Berbasis Sumber Daya:</strong> Pertimbangan ketersediaan sumber daya dalam penilaian risiko</li>
             </ul>
           </div>
-          <div class="col-lg-4">
-            <div class="card bg-light">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-clipboard-data"></i> Risk Matrix</h5>
-                <p class="card-text">Alat utama dalam penilaian risiko untuk menentukan level dan prioritas penanganan.</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Pengendalian dan Mitigasi -->
+        <!-- RISK MATRIX VISUAL -->
+        <div class="section-title mt-5">
+          <h2>Risk Matrix </h2>
+        </div>
+        <p>Risk matrix 5×5 yang dipakai di SMS/SMK3. Kolom = Severity (Dampak), Baris = Likelihood (Kemungkinan).</p>
+
+        <div class="table-responsive">
+          <table class="risk-matrix mb-4">
+            <thead>
+              <tr>
+                <th rowspan="2">Likelihood \ Severity</th>
+                <th>Catastrophic<br/>(Kritis)</th>
+                <th>Hazardous<br/>(Berbahaya)</th>
+                <th>Major<br/>(Signifikan)</th>
+                <th>Minor<br/>(Ringan)</th>
+                <th>Negligible<br/>(Kecil)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Frequent</strong></td>
+                <td class="matrix-high">Critical</td>
+                <td class="matrix-high">High</td>
+                <td class="matrix-high">High</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-medium">Medium</td>
+              </tr>
+              <tr>
+                <td><strong>Occasional</strong></td>
+                <td class="matrix-high">Critical</td>
+                <td class="matrix-high">High</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-low">Low</td>
+              </tr>
+              <tr>
+                <td><strong>Remote</strong></td>
+                <td class="matrix-high">High</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+              </tr>
+              <tr>
+                <td><strong>Improbable</strong></td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-medium">Medium</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+              </tr>
+              <tr>
+                <td><strong>Extremely Improbable</strong></td>
+                <td class="matrix-neutral">Low</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+                <td class="matrix-low">Low</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- RISK REGISTER -->
+        <div class="section-title mt-5">
+          <h2>Risk Register — Risiko GMF</h2>
+        </div>
+    
+        <div class="table-responsive mb-4">
+          <table class="table table-bordered risk-register">
+            <thead>
+              <tr>
+                <th style="width:40px">No</th>
+                <th>Bahaya</th>
+                <th>Dampak</th>
+                <th>Penyebab</th>
+                <th>Mitigasi Utama</th>
+                <th>Level Risiko (contoh)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Foreign Object Debris (FOD)</td>
+                <td>Kerusakan engine / delay</td>
+                <td>Pembersihan area kurang</td>
+                <td>FOD walk, tool control</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Working at height / fall</td>
+                <td>Cedera serius / fatal</td>
+                <td>Pengaman tidak lengkap</td>
+                <td>Perlengkapan harness, SOP WAH</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Exposure chemical (solvent)</td>
+                <td>Iritasi / keracunan</td>
+                <td>Ventilasi buruk, APD kurang</td>
+                <td>Ventilasi, respirator, training</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Electrical hazard</td>
+                <td>Tersengat / kebakaran</td>
+                <td>Pekerjaan live electrical</td>
+                <td>LOTO, pelatihan, isolasi</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Tool / equipment failure</td>
+                <td>Kesalahan maintenance</td>
+                <td>Perawatan tidak terjadwal</td>
+                <td>Preventive maintenance, inspeksi</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Fatigue (kelelahan)</td>
+                <td>Human error</td>
+                <td>Shift panjang, manajemen workload</td>
+                <td>FRMS, jadwal kerja, istirahat</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Manual handling / ergonomi</td>
+                <td>Musculoskeletal injury</td>
+                <td>Tidak ada alat bantu</td>
+                <td>Alat bantu angkat, ergonomi training</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Slip & trip</td>
+                <td>Luka ringan sampai serius</td>
+                <td>Tumpahan oli, jalur sempit</td>
+                <td>Kebersihan, drainase, marking</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Non-conformance part handling</td>
+                <td>Produk tidak layak / safety</td>
+                <td>Traceability buruk</td>
+                <td>Document control, barcode trace</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Emergency response delay</td>
+                <td>Eskalasai insiden</td>
+                <td>Tidak rutin latihan</td>
+                <td>ERP drill, sosialisasi, equipment</td>
+                <td>Medium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- FLOWCHART / ALUR -->
+        <div class="section-title mt-5">
+          <h2>Flowchart Proses Manajemen Risiko</h2>
+        </div>
+        <p>Alur ringkas HIRADC di GMF: Identifikasi → Penilaian → Pengendalian → Pemantauan → Review.</p>
+
+        <!-- Simple SVG flowchart -->
+        <div class="mb-4">
+          <svg class="flowchart" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#4a5568"></path>
+              </marker>
+            </defs>
+
+            <!-- Boxes -->
+            <g font-family="sans-serif" font-size="14">
+              <rect x="20" y="40" width="160" height="80" rx="8" fill="#eef2ff" stroke="#3b82f6"></rect>
+              <text x="100" y="85" text-anchor="middle" fill="#0b3a9e">Identifikasi</text>
+
+              <rect x="220" y="40" width="160" height="80" rx="8" fill="#fff7ed" stroke="#f59e0b"></rect>
+              <text x="300" y="75" text-anchor="middle" fill="#8a4b00">Penilaian Risiko</text>
+
+              <rect x="420" y="40" width="160" height="80" rx="8" fill="#ecfdf5" stroke="#10b981"></rect>
+              <text x="500" y="75" text-anchor="middle" fill="#065f46">Pengendalian</text>
+
+              <rect x="620" y="40" width="160" height="80" rx="8" fill="#fff1f2" stroke="#ef4444"></rect>
+              <text x="700" y="75" text-anchor="middle" fill="#7f1d1d">Pemantauan</text>
+
+              <rect x="820" y="40" width="160" height="80" rx="8" fill="#f3f4f6" stroke="#6b7280"></rect>
+              <text x="900" y="75" text-anchor="middle" fill="#374151">Review & Perbaikan</text>
+            </g>
+
+            <!-- Arrows -->
+            <line x1="180" y1="80" x2="220" y2="80" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"></line>
+            <line x1="380" y1="80" x2="420" y2="80" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"></line>
+            <line x1="580" y1="80" x2="620" y2="80" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"></line>
+            <line x1="780" y1="80" x2="820" y2="80" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"></line>
+
+            <!-- Subtexts -->
+            <text x="100" y="110" text-anchor="middle" font-size="12" fill="#374151">JSA, inspeksi, IOR</text>
+            <text x="300" y="110" text-anchor="middle" font-size="12" fill="#374151">Risk matrix, HIRADC</text>
+            <text x="500" y="110" text-anchor="middle" font-size="12" fill="#374151">Engineering, SOP, APD</text>
+            <text x="700" y="110" text-anchor="middle" font-size="12" fill="#374151">Audit, KPI, IOR</text>
+            <text x="900" y="110" text-anchor="middle" font-size="12" fill="#374151">Safety Committee review</text>
+          </svg>
+        </div>
+
+        <!-- PENGENDALIAN & MITIGASI -->
         <div class="section-title mt-5">
           <h2>5. Pengendalian dan Mitigasi</h2>
         </div>
-        <p>
-          Jika risiko ditemukan tidak dapat diterima (unacceptable risk), manajemen menetapkan metode penanganan.
-        </p>
+        <p>Jika risiko ditemukan tidak dapat diterima (unacceptable risk), manajemen menetapkan metode penanganan.</p>
         <div class="row mt-4">
           <div class="col-md-6">
             <h5><i class="bi bi-gear text-warning"></i> Metode Mitigasi:</h5>
@@ -206,7 +436,7 @@
           </div>
         </div>
 
-        <!-- Pemantauan dan Peningkatan -->
+        <!-- PEMANTAUAN & PENINGKATAN -->
         <div class="section-title mt-5">
           <h2>6. Pemantauan dan Peningkatan Berkelanjutan</h2>
         </div>
@@ -237,7 +467,19 @@
           </div>
         </div>
 
-        <!-- Kesimpulan -->
+        <!-- DOWNLOAD AREA -->
+        <!-- <div class="section-title mt-5">
+          <h2>Area Download</h2>
+        </div>
+        <p>Dokumen pendukung yang dapat diunduh.</p>
+        <div class="download-list mb-4">
+          <a href="assets/docs/safety-policy-gmf.pdf" class="btn btn-outline-secondary btn-sm" target="_blank"><i class="bi bi-download"></i> Safety Policy and Objectives (PDF)</a>
+          <a href="assets/docs/hiradc-form-gmf.xlsx" class="btn btn-outline-secondary btn-sm" target="_blank"><i class="bi bi-download"></i> Form HIRADC (Excel)</a>
+          <a href="assets/docs/risk-matrix-gmf.pdf" class="btn btn-outline-secondary btn-sm" target="_blank"><i class="bi bi-download"></i> Risk Matrix (PDF)</a>
+          <a href="assets/docs/sop-hiradc.pdf" class="btn btn-outline-secondary btn-sm" target="_blank"><i class="bi bi-download"></i> SOP HIRADC (QP 225-02)</a>
+        </div> -->
+
+        <!-- KESIMPULAN -->
         <div class="section-title mt-5">
           <h2>Kesimpulan</h2>
         </div>
@@ -247,7 +489,7 @@
               Sistem manajemen risiko di GMF AeroAsia merupakan pendekatan komprehensif yang terintegrasi 
               dengan operasional perusahaan. Dengan komitmen manajemen puncak, struktur organisasi yang jelas, 
               proses identifikasi dan penilaian yang sistematis, serta mekanisme pemantauan berkelanjutan, 
-              GMF mampu menjaga lingkungan kerja yang aman dan meminimalkan risiko dalam operasi MRO.
+              GMF mampu menjaga lingkungan kerja yang aman dan meminimalisir risiko dalam operasi MRO.
             </p>
           </div>
         </div>
